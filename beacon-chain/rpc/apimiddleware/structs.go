@@ -1185,3 +1185,11 @@ type EventErrorJson struct {
 	StatusCode int    `json:"status_code"`
 	Message    string `json:"message"`
 }
+
+type WithdrawalsResponseJson struct {
+	Data *struct {
+		Withdrawals []*WithdrawalJson `json:"withdrawals" hex:"true"`
+	} `json:"data"`
+	ExecutionOptimistic bool `json:"execution_optimistic"`
+	Finalized           bool `json:"finalized"`
+}

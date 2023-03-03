@@ -2125,3 +2125,168 @@ func file_proto_eth_v2_beacon_state_proto_init() {
 	file_proto_eth_v2_beacon_state_proto_goTypes = nil
 	file_proto_eth_v2_beacon_state_proto_depIdxs = nil
 }
+
+type WithdrawalsRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	StateId []byte                                                             `protobuf:"bytes,1,opt,name=state_id,json=stateId,proto3" json:"state_id,omitempty"`
+	Slot    *github_com_prysmaticlabs_prysm_v3_consensus_types_primitives.Slot `protobuf:"varint,2,opt,name=slot,proto3,oneof" json:"slot,omitempty" cast-type:"github.com/prysmaticlabs/prysm/v3/consensus-types/primitives.Slot"`
+}
+
+func (x *WithdrawalsRequest) Reset() {
+	*x = WithdrawalsRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_eth_v2_beacon_state_proto_msgTypes[12]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *WithdrawalsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*WithdrawalsRequest) ProtoMessage() {}
+
+func (x *WithdrawalsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_eth_v2_beacon_state_proto_msgTypes[12]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use WithdrawalsRequest.ProtoReflect.Descriptor instead.
+func (*WithdrawalsRequest) Descriptor() ([]byte, []int) {
+	return file_proto_eth_v2_beacon_state_proto_rawDescGZIP(), []int{12}
+}
+
+func (x *WithdrawalsRequest) GetStateId() []byte {
+	if x != nil {
+		return x.StateId
+	}
+	return nil
+}
+
+func (x *WithdrawalsRequest) GetSlot() github_com_prysmaticlabs_prysm_v3_consensus_types_primitives.Slot {
+	if x != nil && x.Slot != nil {
+		return *x.Slot
+	}
+	return github_com_prysmaticlabs_prysm_v3_consensus_types_primitives.Slot(0)
+}
+
+type WithdrawalsResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Data                *WithdrawalsResponse_Withdrawals `protobuf:"bytes,1,opt,name=data,proto3" json:"data,omitempty"`
+	ExecutionOptimistic bool                             `protobuf:"varint,2,opt,name=execution_optimistic,json=executionOptimistic,proto3" json:"execution_optimistic,omitempty"`
+	Finalized           bool                             `protobuf:"varint,3,opt,name=finalized,proto3" json:"finalized,omitempty"`
+}
+
+func (x *WithdrawalsResponse) Reset() {
+	*x = WithdrawalsResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_eth_v2_beacon_state_proto_msgTypes[13]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *WithdrawalsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*WithdrawalsResponse) ProtoMessage() {}
+
+func (x *WithdrawalsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_eth_v2_beacon_state_proto_msgTypes[13]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use WithdrawalsResponse.ProtoReflect.Descriptor instead.
+func (*WithdrawalsResponse) Descriptor() ([]byte, []int) {
+	return file_proto_eth_v2_beacon_state_proto_rawDescGZIP(), []int{13}
+}
+
+func (x *WithdrawalsResponse) GetData() *WithdrawalsResponse_Withdrawals {
+	if x != nil {
+		return x.Data
+	}
+	return nil
+}
+
+func (x *WithdrawalsResponse) GetExecutionOptimistic() bool {
+	if x != nil {
+		return x.ExecutionOptimistic
+	}
+	return false
+}
+
+func (x *WithdrawalsResponse) GetFinalized() bool {
+	if x != nil {
+		return x.Finalized
+	}
+	return false
+}
+
+type WithdrawalsResponse_Withdrawals struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Withdrawals []*v11.Withdrawal `protobuf:"bytes,15,rep,name=withdrawals,proto3" json:"withdrawals,omitempty" ssz-max:"16"`
+}
+
+func (x *WithdrawalsResponse_Withdrawals) Reset() {
+	*x = WithdrawalsResponse_Withdrawals{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_eth_v2_beacon_state_proto_msgTypes[15]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *WithdrawalsResponse_Withdrawals) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*WithdrawalsResponse_Withdrawals) ProtoMessage() {}
+
+func (x *WithdrawalsResponse_Withdrawals) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_eth_v2_beacon_state_proto_msgTypes[15]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use WithdrawalsResponse_Withdrawals.ProtoReflect.Descriptor instead.
+func (*WithdrawalsResponse_Withdrawals) Descriptor() ([]byte, []int) {
+	return file_proto_eth_v2_beacon_state_proto_rawDescGZIP(), []int{13, 0}
+}
+
+func (x *WithdrawalsResponse_Withdrawals) GetWithdrawals() []*v11.Withdrawal {
+	if x != nil {
+		return x.Withdrawals
+	}
+	return nil
+}
